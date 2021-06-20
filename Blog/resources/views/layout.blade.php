@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Category</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin Dashboard</title>
+
     <!-- Custom fonts for this template-->
     <link href="{{asset('backend')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -15,6 +21,7 @@
     <link href="{{asset('backend')}}/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -59,8 +66,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" href="#">Add New</a>
-                        <a class="collapse-item" href="#">All Category</a>
+                        <a class="collapse-item" href="{{url('admin/category/create')}}">Add New</a>
+                        <a class="collapse-item" href="{{url('admin/category')}}">All Category</a>
                     </div>
                 </div>
             </li>
@@ -336,17 +343,7 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Add New Category</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
-
-            <!-- End of Main Content -->
+               @yield('content')
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -407,4 +404,5 @@
     <script src="{{asset('backend')}}/js/demo/chart-pie-demo.js"></script>
 
 </body>
+
 </html>
