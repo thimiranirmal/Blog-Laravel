@@ -46,7 +46,7 @@
                                 <p class="text-danger">{{session('error')}}</p>
                                 @endif
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user"
+                                    <input type="text" class="form-control form-control-user"
                                         id="exampleInputEmail" aria-describedby="emailHelp"
                                         placeholder="Email Address" name="email">
                                 </div>

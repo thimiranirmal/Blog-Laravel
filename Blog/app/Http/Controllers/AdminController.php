@@ -19,6 +19,8 @@ class AdminController extends Controller
         ]);
         $usercheck=Admin::where(['email'=>$request->email,'password'=>$request->password])->count();
         if($usercheck>0){
+            $admindata=Admin::where(['email'=>$request->email,'password'=>$request->password])->first();
+            session(['admindata'=>$admindata]);
             return redirect('admin/dashboard');
         }
         else{
@@ -30,5 +32,11 @@ class AdminController extends Controller
     //dasboard
     public function dashboard(){
         return view('dashboard');
+    }
+
+    //Logout
+    public function logout(){
+        session()->forget('admindata');
+        return redirect('admin/login');
     }
 }

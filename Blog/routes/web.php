@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/admin/login',[AdminController::class,'login']);
+Route::get('/admin/logout',[AdminController::class,'logout']);
 Route::post('/admin/login',[AdminController::class,'submit_login']);  
 Route::get('/admin/dashboard',[AdminController::class,'dashboard']);
 Route::resource('/admin/category',CategoryController::class);
