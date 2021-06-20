@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('categoryadd');
+        $data=Category::all();
+        return view('category',['categorydata'=>$data]);
     }
 
     /**
@@ -78,7 +79,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data=Category::find($id);
+        return view('categoryupdate',['data'=>$data]);
     }
 
     /**
@@ -90,7 +92,28 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title'=>'required'
+        ]);
+        
+        if($request->hasFile('image')){
+            $image=$request->file('image');
+            $reimg=time().".".$image->getClientOriginalExtension();
+            $destination=public_path('/img');
+            $image->move($destination,$reimg);
+
+        }else{
+            $reimg=$request->image;
+        }
+
+        $catregory=Category::find($id);
+        $catregory->title=$request->title;
+        $catregory->description=$request->detail;
+        $catregory->image=$reimg;
+
+        $catregory->save();
+
+        return redirect('/admin/category')->with('success','Data has been Updated');
     }
 
     /**
@@ -101,6 +124,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::where('id',$id)->delete();
+        return redirect('/admin/category')->with('warning','Data has been Deleted');
     }
 }

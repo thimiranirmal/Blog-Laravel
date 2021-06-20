@@ -66,8 +66,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" href="#">Add New</a>
-                        <a class="collapse-item" href="#">All Category</a>
+                        <a class="collapse-item" href="{{url('admin/category/create')}}">Add New</a>
+                        <a class="collapse-item" href="{{url('admin/category')}}">All Category</a>
                     </div>
                 </div>
             </li>
