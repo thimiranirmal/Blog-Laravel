@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SettingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +29,10 @@ Route::get('/admin/category/{id}/delete',[CategoryController::class,'destroy']);
 //posts
 Route::resource('/admin/post',PostController::class);
 Route::get('/admin/post/{id}/delete',[PostController::class,'destroy']);
+//Setting
+Route::get('/admin/setting',[SettingController::class,'index']);
+Route::post('/admin/setting',[SettingController::class,'change']);
+
+
+
+

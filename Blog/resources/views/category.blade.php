@@ -31,8 +31,8 @@
                             <td>{{$data->title}}</td>
                             <td><img src="{{asset('img').'/'.$data->image}}" alt="" width="150px"></td>
                             <td>
-                                <a class="btn btn-primary" href="{{url('admin/category/'.$data->id.'/edit')}}">Update</a>
-                                <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')" href="{{url('admin/category/'.$data->id.'/delete')}}">Delete</a>
+                                <a class="btn btn-primary btn-sm" href="{{url('admin/category/'.$data->id.'/edit')}}">Update</a>
+                                <a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')" href="{{url('admin/category/'.$data->id.'/delete')}}">Delete</a>
                             </td>
                         </tr>
                         @endforeach

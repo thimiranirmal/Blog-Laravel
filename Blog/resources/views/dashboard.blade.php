@@ -24,7 +24,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{$countCat}}</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            <i class="fas fa-table fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -39,10 +39,10 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Post</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">25</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$countPost}}</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-table fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">10</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-users fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>

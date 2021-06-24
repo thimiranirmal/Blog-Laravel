@@ -100,7 +100,7 @@ class PostController extends Controller
     {
         $cat=Category::all();
         $data=Post::find($id);
-        return view('postupdate',['cats'=>$cat,'data'=>$data,'title'=>'Category Update',]);
+        return view('postupdate',['cats'=>$cat,'data'=>$data,'title'=>'Post Update',]);
     }
 
     /**

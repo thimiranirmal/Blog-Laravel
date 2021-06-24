@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Category;
+use App\Models\Post;
 
 class AdminController extends Controller
 {
@@ -33,7 +34,8 @@ class AdminController extends Controller
     //dasboard
     public function dashboard(){
         $countCat=Category::count();
-        return view('dashboard')->with(['countCat'=>$countCat]);
+        $countPost=Post::count();
+        return view('dashboard')->with(['countCat'=>$countCat,'countPost'=>$countPost]);
     }
 
     //Logout
