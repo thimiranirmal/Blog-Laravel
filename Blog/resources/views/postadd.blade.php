@@ -6,7 +6,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Add New Category</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Add New Post</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i>Generate Report</a>
                     </div>
@@ -20,21 +20,40 @@
                 @if(Session::has('success'))
                 <p class="text-success">{{session('success')}}</p>
                 @endif
-                <form method="post" action="{{url('admin/category')}}" enctype="multipart/form-data">
+                <form method="post" action="{{url('admin/post')}}" enctype="multipart/form-data">
                 @csrf
 
                     <table class="table table-bordered">
+                        
+                        <tr>
+                            <th>Category</th>
+                            <td>
+                            <select name="category" class="form-control">
+                            @foreach($cats as $cat)
+                            <option value="{{$cat->id}}">{{$cat->title}}</option>
+                            @endforeach
+                            </select>
+                            </td>
+                        </tr>
                         <tr>
                             <th>Title</th>
                             <td><input class="form-control" type="text" name="title"/></td>
                         </tr>
                         <tr>
-                            <th>Detail</th>
-                            <td><input class="form-control" type="text" name="detail"/></td>
+                            <th>Thumb</th>
+                            <td><input type="file" name="thumb"/></td>
                         </tr>
                         <tr>
-                            <th>Image</th>
-                            <td><input type="file" name="image"/></td>
+                            <th>Full Image</th>
+                            <td><input type="file" name="full_img"/></td>
+                        </tr>
+                        <tr>
+                            <th>Detail</th>
+                            <td><textarea class="form-control" type="text" name="detail"></textarea></td>
+                        </tr>
+                        <tr>
+                            <th>Tags</th>
+                            <td><input class="form-control" type="text" name="tag"/></td>
                         </tr>
                     </table>
 

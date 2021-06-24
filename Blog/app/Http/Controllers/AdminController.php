@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\Category;
 
 class AdminController extends Controller
 {
@@ -31,7 +32,8 @@ class AdminController extends Controller
     }
     //dasboard
     public function dashboard(){
-        return view('dashboard');
+        $countCat=Category::count();
+        return view('dashboard')->with(['countCat'=>$countCat]);
     }
 
     //Logout

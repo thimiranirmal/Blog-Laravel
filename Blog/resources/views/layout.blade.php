@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin Dashboard</title>
+    <title>@yield('title','Admin Dashboard')</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('backend')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -89,8 +89,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" href="#">Add New</a>
-                        <a class="collapse-item" href="#">All Posts</a>
+                        <a class="collapse-item" href="{{url('admin/post/create')}}">Add New</a>
+                        <a class="collapse-item" href="{{url('admin/post')}}">All Posts</a>
                         
                     </div>
                 </div>

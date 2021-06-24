@@ -15,7 +15,11 @@ class CategoryController extends Controller
     public function index()
     {
         $data=Category::all();
-        return view('category',['categorydata'=>$data]);
+        return view('category',[
+            'categorydata'=>$data,
+            'title'=>'All Category',
+            'meta_desc'=>'This is Meta data'
+        ]);
     }
 
     /**
@@ -25,7 +29,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('categoryadd');
+        return view('categoryadd',['title'=>'Category Create',]);
     }
 
     /**
@@ -47,15 +51,15 @@ class CategoryController extends Controller
             $image->move($destination,$reimg);
 
         }else{
-            $reimg='';
+            $reimg='N/A';
         }
 
-        $catregory=new Category;
-        $catregory->title=$request->title;
-        $catregory->description=$request->detail;
-        $catregory->image=$reimg;
+        $category=new Category;
+        $category->title=$request->title;
+        $category->description=$request->detail;
+        $category->image=$reimg;
 
-        $catregory->save();
+        $category->save();
 
         return redirect('/admin/category/create')->with('success','Data has been Added');
     }
@@ -80,7 +84,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $data=Category::find($id);
-        return view('categoryupdate',['data'=>$data]);
+        return view('categoryupdate',['data'=>$data,'title'=>'Category Update',]);
     }
 
     /**
@@ -106,12 +110,12 @@ class CategoryController extends Controller
             $reimg=$request->image;
         }
 
-        $catregory=Category::find($id);
-        $catregory->title=$request->title;
-        $catregory->description=$request->detail;
-        $catregory->image=$reimg;
+        $category=Category::find($id);
+        $category->title=$request->title;
+        $category->description=$request->detail;
+        $category->image=$reimg;
 
-        $catregory->save();
+        $category->save();
 
         return redirect('/admin/category')->with('success','Data has been Updated');
     }
