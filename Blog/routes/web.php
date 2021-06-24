@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +17,8 @@ use App\Http\Controllers\SettingController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[HomeController::class,'home'] );
+//Admin
 Route::get('/admin/login',[AdminController::class,'login']);
 Route::get('/admin/logout',[AdminController::class,'logout']);
 Route::post('/admin/login',[AdminController::class,'submit_login']);  
