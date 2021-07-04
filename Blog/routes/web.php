@@ -16,8 +16,9 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/',[HomeController::class,'home'] );
+//Home
+Route::get('/',[HomeController::class,'index'] );
+Route::get('/detail/{slug}/{id}',[HomeController::class,'detail'] );
 //Admin
 Route::get('/admin/login',[AdminController::class,'login']);
 Route::get('/admin/logout',[AdminController::class,'logout']);
@@ -36,3 +37,7 @@ Route::post('/admin/setting',[SettingController::class,'change']);
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
