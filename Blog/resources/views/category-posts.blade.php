@@ -1,7 +1,8 @@
 @extends('homelayout')
-
+@section('title',$category->title)
 @section('content')
 <div class="container mt-4">
+            <h2>{{$category->title}}</h2>
             <div class="row">
                 <div class="col-md-8">
                     <div class="row my-4">

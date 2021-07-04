@@ -19,6 +19,8 @@ use App\Http\Controllers\HomeController;
 //Home
 Route::get('/',[HomeController::class,'index'] );
 Route::get('/detail/{slug}/{id}',[HomeController::class,'detail'] );
+Route::get('/category/{slug}/{id}',[HomeController::class,'category_posts'] );
+Route::get('/all-category',[HomeController::class,'all_category'] );
 Route::post('/save-comment/{slug}/{id}',[HomeController::class,'save_comment'] );
 //Admin
 Route::get('/admin/login',[AdminController::class,'login']);

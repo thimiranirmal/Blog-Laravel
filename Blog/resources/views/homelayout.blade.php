@@ -13,17 +13,17 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">My Blog</a>
+        <a class="navbar-brand" href="{{url('home')}}">My Blog</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse align-items-end" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="{{url('home')}}">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">Categories</a>
+            <a class="nav-link" href="{{url('all-category')}}">Categories</a>
             </li>
             @guest
             <li class="nav-item">
@@ -44,7 +44,46 @@
     </nav>
     <main>
     @yield('content')
-    
+    <div class="col-md-4">
+                    <div class="card mb-4 shadow" >
+                        <div class="card-header">Search</div>
+                        <div class="card-body">
+                            <form action="{{url('/')}}">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="q" class="form-control" aria-describedby="button-addon2">
+                                    <button class="btn btn-dark" type="submit" id="button-addon2">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow">
+                        <div class="card-header">Recent Post</div>
+                        <div class="card-body">
+                            <div class="list-group list-group-flush">
+                            @if($recent_posts)
+                                @foreach($recent_posts as $post)
+                                <a href="#" class="list-group-item">{{$post->title}}</a>
+                                @endforeach
+                            @endif
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow">
+                        <div class="card-header">Popular Post</div>
+                        <div class="card-body">
+                            <div class="list-group list-group-flush">
+                            @if($popular_posts)
+                                @foreach($popular_posts as $post)
+                                <a href="#" class="list-group-item">{{$post->title}} <span class="btn btn-info">{{$post->views}}</span></a>
+                                @endforeach
+                            @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>
