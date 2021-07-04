@@ -20,9 +20,15 @@
                                         <blockquote class="blockquote">
                                             <p>{{$comment->comment}}</p>
                                         </blockquote>
+                                        @if($comment->user_id==0)
                                         <figcaption class="blockquote-footer">
-                                            Thimira Nirmal 
+                                            Admin 
                                         </figcaption>
+                                        @else
+                                        <figcaption class="blockquote-footer">
+                                            {{$comment->user->name}} 
+                                        </figcaption>
+                                        @endif
                                     </figure>
 
                                     @endforeach
@@ -32,10 +38,13 @@
 
                     <div class="card mt-2">
                         <h5 class="card-header form-control">Add Comment</h5>
-                        <div class="card-body">
-                            <textarea name="comment" id="" cols="30" rows="2" class="form-control"></textarea>
-                            <input type="submit" class="btn btn-dark mt-2" value="Comment">
-                        </div>
+                        <form action="{{url('save-comment/'.Str::slug($detail->title).'/'.$detail->id)}}" method="post">
+                        @csrf
+                            <div class="card-body">
+                                <textarea name="comment" id="" cols="30" rows="2" class="form-control"></textarea>
+                                <input type="submit" class="btn btn-dark mt-2" value="Comment">
+                            </div>
+                            </form>
                     </div>
 
                 </div>

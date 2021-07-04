@@ -19,6 +19,7 @@ use App\Http\Controllers\HomeController;
 //Home
 Route::get('/',[HomeController::class,'index'] );
 Route::get('/detail/{slug}/{id}',[HomeController::class,'detail'] );
+Route::post('/save-comment/{slug}/{id}',[HomeController::class,'save_comment'] );
 //Admin
 Route::get('/admin/login',[AdminController::class,'login']);
 Route::get('/admin/logout',[AdminController::class,'logout']);

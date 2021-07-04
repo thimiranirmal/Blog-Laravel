@@ -9,9 +9,9 @@
                             @foreach($posts as $post)
                             <div class="col-md-4">
                                 <div class="card" >
-                                    <a href="{{url('detail/'.$post->id)}}"><img src="{{asset('img/postthumb/'.$post->thumb)}}" class="card-img-top" alt="..."></a>
+                                    <a href="{{url('detail/'.Str::slug($post->title).'/'.$post->id)}}"><img src="{{asset('img/postthumb/'.$post->thumb)}}" class="card-img-top" alt="..."></a>
                                     <div class="card-body">
-                                        <h5 class="card-title"><a href="{{url('detail/'.$post->id)}}">{{$post->title}}</a> </h5>
+                                        <h5 class="card-title"><a href="{{url('detail/'.Str::slug($post->title).'/'.$post->id)}}">{{$post->title}}</a> </h5>
                                         
                                     </div>
                                 </div>
