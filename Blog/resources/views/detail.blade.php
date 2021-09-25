@@ -11,7 +11,7 @@
                             <p>{{$detail->detail}}</p>
                         </div>
                         <div class="card-footer">
-                            Category : <a href="{{url('category/'.Str::slug($detail->category->title).'/'.$detail->category->id)}}">{{$detail->category->title}}</a>
+                            Category : <a href="{{url('category/'.Str::slug($detail->category->title).'/'.$detail->category->id)}}">{{$detail->category->title}}+++++++++++++++++++++++++++++++++</a>
                         </div>
                                 
                     </div>

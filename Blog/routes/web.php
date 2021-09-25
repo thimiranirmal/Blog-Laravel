@@ -22,6 +22,8 @@ Route::get('/detail/{slug}/{id}',[HomeController::class,'detail'] );
 Route::get('/category/{slug}/{id}',[HomeController::class,'category_posts'] );
 Route::get('/all-category',[HomeController::class,'all_category'] );
 Route::post('/save-comment/{slug}/{id}',[HomeController::class,'save_comment'] );
+Route::get('save-post-form',[HomeController::class,'submit_post'] );
+Route::post('save-post-form',[HomeController::class,'save_post'] );
 //Admin
 Route::get('/admin/login',[AdminController::class,'login']);
 Route::get('/admin/logout',[AdminController::class,'logout']);
